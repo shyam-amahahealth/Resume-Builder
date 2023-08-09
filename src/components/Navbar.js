@@ -1,5 +1,5 @@
 import React from "react";
-import { NavbarContainer, Title } from "./NavbarStyle";
+import { NavbarContainer, Title } from "../styles/NavbarStyle";
 const Header = ({ title }) => {
   return (
     <NavbarContainer>
