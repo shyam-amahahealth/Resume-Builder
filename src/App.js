@@ -6,20 +6,20 @@ import { PersistGate } from "redux-persist/integration/react";
 import storage from "redux-persist/lib/storage";
 import { persistStore, persistReducer } from "redux-persist";
 import Navbar from "./components/Navbar";
-import PersonalDetails from "./components/PersonalDetails";
 import PersonalDetailReducer from "./store/reducer/personalDetailReducer";
 import Modal from "./components/Modal";
 import Button from "./styles/Button";
-import EducationDetails from "./components/EducationDetails";
 import EducationalDetailReducer from "./store/reducer/educationalDetailReducer";
-import SkillsDetails from "./components/SkillsDetails";
 import skillReducer from "./store/reducer/skillReducer";
 import ProjectDetailReducer from "./store/reducer/projectDetailReducer";
-import ProjectDetails from "./components/ProjectDetails";
-import CertificateDetail from "./components/CertificateDetails";
 import CertificateDetailReducer from "./store/reducer/certificateDetailReducer";
 import ExperienceDetailReducer from "./store/reducer/experienceDetailReducer";
-import ExperienceDetails from "./components/ExperienceDetails";
+import SkillsDetailsForm from "./components/SkillsDetailsForm";
+import CertificateDetailsForm from "./components/CertificateDetailsForm";
+import EducationDetailsForm from "./components/EducationDetailsForm";
+import ExperienceDetailsForm from "./components/ExperienceDetailsForm";
+import PersonalDetailsForm from "./components/PersonalDetailsForm";
+import ProjectDetailsForm from "./components/ProjectDetailsForm";
 
 const rootReducer = combineReducers({
   PersonalDetails: PersonalDetailReducer,
@@ -60,12 +60,12 @@ const App = () => {
       <PersistGate loading={null} persistor={persistor}>
         <MainContainer>
           <Navbar title="Online Resume Builder" />
-          <PersonalDetails />
-          <EducationDetails />
-          <SkillsDetails />
-          <ProjectDetails />
-          <CertificateDetail />
-          <ExperienceDetails />
+          <PersonalDetailsForm />
+          <EducationDetailsForm />
+          <SkillsDetailsForm />
+          <ProjectDetailsForm />
+          <CertificateDetailsForm />
+          <ExperienceDetailsForm />
           <Button onClick={openModal}>Preview</Button>
           <Modal isOpen={modalOpen} onClose={closeModal} />
         </MainContainer>

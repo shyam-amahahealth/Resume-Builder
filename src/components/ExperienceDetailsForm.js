@@ -15,7 +15,7 @@ import { addExperienceDetailAction } from "../store/action/experienceDetailActio
 import ExperienceGridItem from "./ExperienceGridItem";
 import Textarea from "./Textarea";
 
-const ExperienceDetails = () => {
+const ExperienceDetailsForm = () => {
   const experienceDetail = useSelector(
     (state) => state.experienceDetail.experienceDetails
   );
@@ -100,4 +100,4 @@ const ExperienceDetails = () => {
   );
 };
 
-export default ExperienceDetails;
+export default ExperienceDetailsForm;

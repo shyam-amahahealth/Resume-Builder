@@ -16,7 +16,7 @@ import { addProjectDetails } from "../store/action/projectDetailsAction";
 import ProjectGridItem from "./ProjectGridItem";
 import Textarea from "./Textarea";
 
-const ProjectDetails = () => {
+const ProjectDetailsForm = () => {
   const projectDetail = useSelector(
     (state) => state.ProjectDetail.projectDetail
   );
@@ -81,4 +81,4 @@ const ProjectDetails = () => {
   );
 };
 
-export default ProjectDetails;
+export default ProjectDetailsForm;

@@ -19,7 +19,7 @@ import {
   updateName,
   updatePhone,
 } from "../store/action/personalDetailActions";
-const PersonalDetails = () => {
+const PersonalDetailsForm = () => {
   const dispatch = useDispatch();
   const personalData = useSelector((state) => state.PersonalDetails);
 
@@ -70,4 +70,4 @@ const PersonalDetails = () => {
     </FormContainer>
   );
 };
-export default PersonalDetails;
+export default PersonalDetailsForm;

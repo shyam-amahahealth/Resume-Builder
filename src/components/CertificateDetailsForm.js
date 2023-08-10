@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addCertificate } from "../store/action/certificateDetailAction";
 import CertificateGridItem from "./CertificateGridItem";
 
-const CertificateDetail = () => {
+const CertificateDetailsForm = () => {
   const certificateDetails = useSelector(
     (state) => state.CertificateDetail.certificateDetail
   );
@@ -89,4 +89,4 @@ const CertificateDetail = () => {
   );
 };
 
-export default CertificateDetail;
+export default CertificateDetailsForm;

@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import SkillGridItem from "./SkillGridItem";
 import { addSkills } from "../store/action/skillsAction";
 
-const SkillsDetails = () => {
+const SkillsDetailsForm = () => {
   const skills = useSelector((state) => state.Skill.skill);
   const dispatch = useDispatch();
   const [skill, setSkill] = useState("");
@@ -65,4 +65,4 @@ const SkillsDetails = () => {
   );
 };
 
-export default SkillsDetails;
+export default SkillsDetailsForm;

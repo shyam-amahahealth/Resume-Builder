@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addEducationalDetailAction } from "../store/action/eductionalDetailAction";
 import EducationGridItem from "./EducationGridItem";
 
-const EducationDetails = () => {
+const EducationDetailsForm = () => {
   const educationalDetails = useSelector((state) => state.EducationDetails);
   const dispatch = useDispatch();
   const [degree, setDegree] = useState("");
@@ -84,4 +84,4 @@ const EducationDetails = () => {
   );
 };
 
-export default EducationDetails;
+export default EducationDetailsForm;

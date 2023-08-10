@@ -65,7 +65,7 @@ const Modal = ({ isOpen, onClose }) => {
               <ResumeHeading>Experience</ResumeHeading>
               {experienceDetail.map((item, index) => {
                 return (
-                  <ExperienceContainer>
+                  <ExperienceContainer key={index}>
                     <ExperienceHeading>
                       <CompanyName>{item.companyName}</CompanyName>
                       <CompanyName>-</CompanyName>
@@ -81,7 +81,7 @@ const Modal = ({ isOpen, onClose }) => {
               <ResumeHeading>Education</ResumeHeading>
               {EducationDetails.map((item, index) => {
                 return (
-                  <ExperienceContainer>
+                  <ExperienceContainer key={index}>
                     <ExperienceHeading>
                       <CompanyName>{item.college}</CompanyName>
                       <CompanyName>-</CompanyName>
@@ -97,7 +97,7 @@ const Modal = ({ isOpen, onClose }) => {
               <ResumeHeading>Projects</ResumeHeading>
               {ProjectDetail.map((item, index) => {
                 return (
-                  <ExperienceContainer>
+                  <ExperienceContainer key={index}>
                     <ExperienceHeading>
                       <CompanyName>{item.project}</CompanyName>
                     </ExperienceHeading>
