@@ -10,6 +10,7 @@ import PersonalDetails from "./components/PersonalDetails";
 import PersonalDetailReducer from "./store/reducer/personalDetail";
 import Modal from "./components/Modal";
 import Button from "./styles/Button";
+import EducationDetails from "./components/EducationDetails";
 
 const rootReducer = combineReducers({
   PersonalDetails: PersonalDetailReducer,
@@ -42,9 +43,8 @@ const App = () => {
         <MainContainer>
           <Navbar title="Online Resume Builder" />
           <PersonalDetails />
-          <Button onClick={openModal} >
-            Preview
-          </Button>
+          <EducationDetails />
+          <Button onClick={openModal}>Preview</Button>
           <Modal isOpen={modalOpen} onClose={closeModal} />
         </MainContainer>
       </PersistGate>

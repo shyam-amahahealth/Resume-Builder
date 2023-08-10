@@ -3,6 +3,7 @@ export const UPDATE_EMAIL = "UPDATE_EMAIL";
 export const UPDATE_ADDRESS = "UPDATE_ADDRESS";
 export const UPDATE_PHONE = "UPDATE_PHONE";
 export const UPDATE_GITHUB = "UPDATE_GITHUB";
+export const UPDATE_ABOUT = "UPDATE_ABOUT";
 export const updateName = (name) => {
   return {
     type: UPDATE_NAME,
@@ -33,5 +34,11 @@ export const updateGithub = (github) => {
   return {
     type: UPDATE_GITHUB,
     github,
+  };
+};
+export const updateAbout = (about) => {
+  return {
+    type: UPDATE_ABOUT,
+    about,
   };
 };

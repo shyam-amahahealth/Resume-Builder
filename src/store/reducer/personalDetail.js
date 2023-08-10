@@ -1,4 +1,5 @@
 import {
+  UPDATE_ABOUT,
   UPDATE_ADDRESS,
   UPDATE_EMAIL,
   UPDATE_GITHUB,
@@ -12,6 +13,7 @@ const initialState = {
   phone: "",
   address: "",
   github: "",
+  about: "",
 };
 const PersonalDetail = (state = initialState, action) => {
   switch (action.type) {
@@ -43,6 +45,12 @@ const PersonalDetail = (state = initialState, action) => {
       return {
         ...state,
         github: action.github,
+      };
+    }
+    case UPDATE_ABOUT: {
+      return {
+        ...state,
+        about: action.about,
       };
     }
     default: {

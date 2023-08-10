@@ -1,17 +1,18 @@
 import React from "react";
 import {
-  PersonalDetailAvatar,
-  PersonalDetailHeading,
-  PersonalDetailIcon,
-  PersonalDetailsContainer,
+  FormAvatar,
+  FormAvatarIcon,
+  FormContainer,
+  FormHeading,
   TextInputContainer,
   TextInputInnerContainer,
-} from "../styles/PersonDetailsStyles";
+} from "../styles/formStyle";
 import personalDetailIcon from "../assets/user.png";
 import TextInput from "./TextInput";
 import Textarea from "./Textarea";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  updateAbout,
   updateAddress,
   updateEmail,
   updateGithub,
@@ -23,11 +24,11 @@ const PersonalDetails = () => {
   const personalData = useSelector((state) => state.PersonalDetails);
 
   return (
-    <PersonalDetailsContainer>
-      <PersonalDetailAvatar>
-        <PersonalDetailIcon src={personalDetailIcon} />
-        <PersonalDetailHeading>Personal Details</PersonalDetailHeading>
-      </PersonalDetailAvatar>
+    <FormContainer>
+      <FormAvatar>
+        <FormAvatarIcon src={personalDetailIcon} />
+        <FormHeading>Personal Details</FormHeading>
+      </FormAvatar>
       <TextInputContainer>
         <TextInputInnerContainer>
           <TextInput
@@ -59,7 +60,14 @@ const PersonalDetails = () => {
           />
         </TextInputInnerContainer>
       </TextInputContainer>
-    </PersonalDetailsContainer>
+      <TextInputContainer>
+        <TextInput
+          value={personalData.about}
+          placeholder={"About you in short"}
+          onChange={(event) => dispatch(updateAbout(event.target.value))}
+        />
+      </TextInputContainer>
+    </FormContainer>
   );
 };
 export default PersonalDetails;
