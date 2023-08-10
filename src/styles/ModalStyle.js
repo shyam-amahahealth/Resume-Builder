@@ -13,47 +13,54 @@ export const ModalContent = styled.div`
   background-color: white;
   border-radius: 4px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
-  margin: 100px;
-  height: 80%;
+  margin: 5% auto;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   overflow: scroll;
 `;
 
 export const CloseButton = styled.button`
   position: absolute;
-  top: 110px;
-  right: 110px;
+  right: 6%;
   background: none;
   font-weight: bolder;
   border: none;
   font-size: 20px;
   cursor: pointer;
 `;
+
 export const ResumeContainer = styled.div`
   padding: 60px;
   display: flex;
   flex-direction: row;
   gap: 40px;
 `;
+
 export const DetailedContainer = styled.div`
-  flex-direction: column;
-  width: 60%;
+  flex: 1;
 `;
 
 export const NormalContainer = styled.div`
   flex-direction: column;
   width: 40%;
 `;
+
 export const Name = styled.h1`
   font-size: 50px;
   margin: 2px;
   padding: 0px;
 `;
+
 export const Text = styled.p`
   margin: 2px;
   padding: 0px;
   text-align: justify;
   font-size: 20px;
 `;
+
 export const ResumeHeading = styled.h2`
   color: blue;
 `;
