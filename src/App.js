@@ -12,10 +12,13 @@ import Modal from "./components/Modal";
 import Button from "./styles/Button";
 import EducationDetails from "./components/EducationDetails";
 import EducationalDetailReducer from "./store/reducer/educationalDetailReducer";
+import SkillsDetails from "./components/SkillsDetails";
+import skillReducer from "./store/reducer/skillReducer";
 
 const rootReducer = combineReducers({
   PersonalDetails: PersonalDetailReducer,
-  EducationDetails:EducationalDetailReducer
+  EducationDetails: EducationalDetailReducer,
+  Skill: skillReducer,
 });
 
 const persistConfig = {
@@ -46,6 +49,7 @@ const App = () => {
           <Navbar title="Online Resume Builder" />
           <PersonalDetails />
           <EducationDetails />
+          <SkillsDetails />
           <Button onClick={openModal}>Preview</Button>
           <Modal isOpen={modalOpen} onClose={closeModal} />
         </MainContainer>
