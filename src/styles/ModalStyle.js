@@ -11,10 +11,11 @@ export const ModalOverlay = styled.div`
 
 export const ModalContent = styled.div`
   background-color: white;
-  padding: 20px;
   border-radius: 4px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
   margin: 100px;
+  height: 80%;
+  overflow: scroll;
 `;
 
 export const CloseButton = styled.button`
@@ -26,4 +27,64 @@ export const CloseButton = styled.button`
   border: none;
   font-size: 20px;
   cursor: pointer;
+`;
+export const ResumeContainer = styled.div`
+  padding: 60px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+`;
+export const DetailedContainer = styled.div`
+  flex-direction: column;
+  width: 60%;
+`;
+
+export const NormalContainer = styled.div`
+  flex-direction: column;
+  width: 40%;
+`;
+export const Name = styled.h1`
+  font-size: 50px;
+  margin: 2px;
+  padding: 0px;
+`;
+export const Text = styled.p`
+  margin: 2px;
+  padding: 0px;
+  text-align: justify;
+  font-size: 20px;
+`;
+export const ResumeHeading = styled.h2`
+  color: blue;
+`;
+export const InnerContainer = styled.div`
+  margin-top: 80px;
+`;
+export const ExperienceContainer = styled.div`
+  margin-top: 30px;
+  margin-bottom: 30px;
+`;
+export const ExperienceHeading = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 0px;
+  gap: 10px;
+  padding: 0px;
+`;
+export const CompanyName = styled.h2`
+  font-weight: bolder;
+  font-size: 26px;
+  margin: 0px;
+  padding: 0px;
+`;
+export const MyProfile = styled.h1`
+  font-weight: bolder;
+  font-size: 20px;
+  margin: 0px;
+  padding: 0px;
+`;
+export const ButtonContainer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
 `;
