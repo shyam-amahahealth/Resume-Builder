@@ -44,6 +44,10 @@ const App = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
     setModalOpen(true);
   };
 

@@ -6,6 +6,7 @@ export const GridItem = styled.div`
   background-color: lightgray;
   position: relative;
   overflow: hidden;
+  z-index: 0;
 `;
 
 export const CloseButton = styled.button`

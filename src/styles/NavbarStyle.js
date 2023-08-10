@@ -8,6 +8,7 @@ export const NavbarContainer = styled.div`
   align-items: center;
   padding-left: 20px;
   position: fixed;
+  z-index: 2;
 `;
 export const Title = styled.h1`
   font-weight: bolder;
