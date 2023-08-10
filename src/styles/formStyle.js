@@ -36,3 +36,8 @@ export const TextInputInnerContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
+export const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+`;

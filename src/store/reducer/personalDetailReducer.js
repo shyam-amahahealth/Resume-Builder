@@ -15,7 +15,7 @@ const initialState = {
   github: "",
   about: "",
 };
-const PersonalDetail = (state = initialState, action) => {
+const PersonalDetailReducer = (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_NAME: {
       return {
@@ -58,4 +58,4 @@ const PersonalDetail = (state = initialState, action) => {
     }
   }
 };
-export default PersonalDetail;
+export default PersonalDetailReducer;

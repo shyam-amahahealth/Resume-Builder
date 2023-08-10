@@ -7,13 +7,15 @@ import storage from "redux-persist/lib/storage";
 import { persistStore, persistReducer } from "redux-persist";
 import Navbar from "./components/Navbar";
 import PersonalDetails from "./components/PersonalDetails";
-import PersonalDetailReducer from "./store/reducer/personalDetail";
+import PersonalDetailReducer from "./store/reducer/personalDetailReducer";
 import Modal from "./components/Modal";
 import Button from "./styles/Button";
 import EducationDetails from "./components/EducationDetails";
+import EducationalDetailReducer from "./store/reducer/educationalDetailReducer";
 
 const rootReducer = combineReducers({
   PersonalDetails: PersonalDetailReducer,
+  EducationDetails:EducationalDetailReducer
 });
 
 const persistConfig = {
