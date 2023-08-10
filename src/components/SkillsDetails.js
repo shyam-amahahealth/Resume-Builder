@@ -26,7 +26,7 @@ const SkillsDetails = () => {
     }
   };
 
-  const removeEducationalDetail = (index) => {
+  const removeSkillDetail = (index) => {
     const updatedDetails = skills.filter((_, i) => i !== index);
     dispatch(addSkills(updatedDetails));
   };
@@ -56,7 +56,7 @@ const SkillsDetails = () => {
                 key={index}
                 item={item}
                 index={index}
-                removeEducationalDetail={removeEducationalDetail}
+                removeSkillDetail={removeSkillDetail}
               />
             );
           })}

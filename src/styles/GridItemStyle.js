@@ -17,7 +17,7 @@ export const CloseButton = styled.button`
   cursor: pointer;
 `;
 
-export const DegreeInfo = styled.p`
+export const GridItemHeading = styled.p`
   margin: 5px 0;
   font-weight: bold;
 `;
@@ -26,6 +26,6 @@ export const CollegeInfo = styled.p`
   margin: 5px 0;
 `;
 
-export const SessionInfo = styled.p`
+export const GridItemSubHeading = styled.p`
   margin: 5px 0;
 `;

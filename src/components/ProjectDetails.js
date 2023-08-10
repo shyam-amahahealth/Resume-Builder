@@ -8,7 +8,7 @@ import {
   TextInputContainer,
   TextInputInnerContainer,
 } from "../styles/formStyle";
-import educationDetailIcon from "../assets/graduation.png";
+import projectIcon from "../assets/project.png";
 import TextInput from "./TextInput";
 import Button from "../styles/Button";
 import { useDispatch, useSelector } from "react-redux";
@@ -36,7 +36,7 @@ const ProjectDetails = () => {
     }
   };
 
-  const removeEducationalDetail = (index) => {
+  const removeProjectDetail = (index) => {
     const updatedDetails = projectDetail.filter((_, i) => i !== index);
     dispatch(addProjectDetails(updatedDetails));
   };
@@ -44,8 +44,8 @@ const ProjectDetails = () => {
   return (
     <FormContainer>
       <FormAvatar>
-        <FormAvatarIcon src={educationDetailIcon} />
-        <FormHeading>Education Details</FormHeading>
+        <FormAvatarIcon src={projectIcon} />
+        <FormHeading>Projects</FormHeading>
       </FormAvatar>
       <TextInputContainer>
         <TextInputInnerContainer>
@@ -54,20 +54,17 @@ const ProjectDetails = () => {
             placeholder={"Project Name"}
             onChange={(event) => setProject(event.target.value)}
           />
-          <Button $inputColor="teal" onClick={() => addProjectDetail()}>
-            ADD
-          </Button>
-        </TextInputInnerContainer>
-
-        <TextInputInnerContainer>
           <Textarea
             value={projectDescription}
             placeholder={"Project description"}
             onChange={(event) => setProjectDescription(event.target.value)}
           />
+          <Button $inputColor="teal" onClick={() => addProjectDetail()}>
+            ADD
+          </Button>
         </TextInputInnerContainer>
       </TextInputContainer>
-      <GridContainer>
+      <GridContainer $inputWidth="400px">
         {projectDetail.length !== 0 &&
           projectDetail.map((item, index) => {
             return (
@@ -75,7 +72,7 @@ const ProjectDetails = () => {
                 key={index}
                 item={item}
                 index={index}
-                removeEducationalDetail={removeEducationalDetail}
+                removeProjectDetail={removeProjectDetail}
               />
             );
           })}

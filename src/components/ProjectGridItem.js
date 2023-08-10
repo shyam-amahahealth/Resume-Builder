@@ -1,19 +1,19 @@
 import React from "react";
 import {
   CloseButton,
-  DegreeInfo,
+  GridItemHeading,
   GridItem,
-  SessionInfo,
+  GridItemSubHeading,
 } from "../styles/GridItemStyle";
 
-const ProjectGridItem = ({ item, index, removeEducationalDetail }) => {
+const ProjectGridItem = ({ item, index, removeProjectDetail }) => {
   return (
     <GridItem>
-      <CloseButton onClick={() => removeEducationalDetail(index)}>
+      <CloseButton onClick={() => removeProjectDetail(index)}>
         X
       </CloseButton>
-      <DegreeInfo>{item.project}</DegreeInfo>
-      <SessionInfo>{item.projectDescription}</SessionInfo>
+      <GridItemHeading>{item.project}</GridItemHeading>
+      <GridItemSubHeading>{item.projectDescription}</GridItemSubHeading>
     </GridItem>
   );
 };
