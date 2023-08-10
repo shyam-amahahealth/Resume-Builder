@@ -18,6 +18,8 @@ import ProjectDetailReducer from "./store/reducer/projectDetailReducer";
 import ProjectDetails from "./components/ProjectDetails";
 import CertificateDetail from "./components/CertificateDetails";
 import CertificateDetailReducer from "./store/reducer/certificateDetailReducer";
+import ExperienceDetailReducer from "./store/reducer/experienceDetailReducer";
+import ExperienceDetails from "./components/ExperienceDetails";
 
 const rootReducer = combineReducers({
   PersonalDetails: PersonalDetailReducer,
@@ -25,6 +27,7 @@ const rootReducer = combineReducers({
   Skill: skillReducer,
   ProjectDetail: ProjectDetailReducer,
   CertificateDetail: CertificateDetailReducer,
+  experienceDetail: ExperienceDetailReducer,
 });
 
 const persistConfig = {
@@ -58,6 +61,7 @@ const App = () => {
           <SkillsDetails />
           <ProjectDetails />
           <CertificateDetail />
+          <ExperienceDetails />
           <Button onClick={openModal}>Preview</Button>
           <Modal isOpen={modalOpen} onClose={closeModal} />
         </MainContainer>
