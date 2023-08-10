@@ -1,18 +1,31 @@
 import React, { useState } from "react";
 import { MainContainer } from "./styles/AppStyles";
 import { combineReducers, legacy_createStore as createStore } from "redux";
-import Navbar from "./components/Navbar";
-
-import PersonalDetails from "./components/PersonalDetails";
-import PersonalDetail from "./store/reducer/personalDetail";
 import { Provider } from "react-redux";
-import PreviewButton from "./components/PreviewButton";
+import { PersistGate } from "redux-persist/integration/react";
+import storage from "redux-persist/lib/storage";
+import { persistStore, persistReducer } from "redux-persist";
+import Navbar from "./components/Navbar";
+import PersonalDetails from "./components/PersonalDetails";
+import PersonalDetailReducer from "./store/reducer/personalDetail";
 import Modal from "./components/Modal";
+import Button from "./styles/Button";
+
 const rootReducer = combineReducers({
-  PersonalDetails: PersonalDetail,
+  PersonalDetails: PersonalDetailReducer,
 });
+
+const persistConfig = {
+  key: "root",
+  storage,
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
 const App = () => {
-  const store = createStore(rootReducer);
+  const store = createStore(persistedReducer);
+  const persistor = persistStore(store);
+
   const [modalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
@@ -22,17 +35,19 @@ const App = () => {
   const closeModal = () => {
     setModalOpen(false);
   };
+
   return (
     <Provider store={store}>
-      <MainContainer>
-        <Navbar title="Online Resume Builder" />
-        <PersonalDetails />
-        <PreviewButton onClick={openModal} />
-        <Modal isOpen={modalOpen} onClose={closeModal}>
-          <h2>This is a Modal</h2>
-          <p>Hello, I am a pop-up modal using Styled Components!</p>
-        </Modal>
-      </MainContainer>
+      <PersistGate loading={null} persistor={persistor}>
+        <MainContainer>
+          <Navbar title="Online Resume Builder" />
+          <PersonalDetails />
+          <Button onClick={openModal} >
+            Preview
+          </Button>
+          <Modal isOpen={modalOpen} onClose={closeModal} />
+        </MainContainer>
+      </PersistGate>
     </Provider>
   );
 };

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export const PreviewButtonComponent = styled.button`
+const Button = styled.button`
   width: 200px;
   height: 50px;
   background-color: darkgreen;
@@ -10,3 +10,4 @@ export const PreviewButtonComponent = styled.button`
   font-size: larger;
   font-weight: bolder;
 `;
+export default Button;
