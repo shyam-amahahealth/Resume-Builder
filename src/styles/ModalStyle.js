@@ -12,11 +12,10 @@ export const ModalOverlay = styled.div`
 export const ModalContent = styled.div`
   background-color: white;
   border-radius: 4px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   margin: 5% auto;
   max-width: 90%;
-  max-height: 90%;
-  overflow: hidden;
+  max-height: 80%;
   display: flex;
   flex-direction: column;
   overflow: scroll;
@@ -37,6 +36,7 @@ export const ResumeContainer = styled.div`
   display: flex;
   flex-direction: row;
   gap: 40px;
+  min-width: 1440px;
 `;
 
 export const DetailedContainer = styled.div`
@@ -50,12 +50,12 @@ export const NormalContainer = styled.div`
 
 export const Name = styled.h1`
   font-size: 50px;
-  margin: 2px;
+  margin: 5px;
   padding: 0px;
 `;
 
 export const Text = styled.p`
-  margin: 2px;
+  margin: 5px;
   padding: 0px;
   text-align: justify;
   font-size: 20px;

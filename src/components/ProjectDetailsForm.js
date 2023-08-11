@@ -64,7 +64,7 @@ const ProjectDetailsForm = () => {
           </Button>
         </TextInputInnerContainer>
       </TextInputContainer>
-      <GridContainer $inputWidth="400px">
+      <GridContainer $inputWidth="300px">
         {projectDetail.length !== 0 &&
           projectDetail.map((item, index) => {
             return (
