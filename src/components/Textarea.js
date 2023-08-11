@@ -1,12 +1,18 @@
 import React from "react";
-import { TextareaFeild } from "../styles/TextareaStyles";
-const Textarea = ({ placeholder, value, onChange }) => {
+import { TextareaFeild, ErrorText } from "../styles/TextareaStyles";
+const Textarea = ({ placeholder, value, onChange, type, error }) => {
   return (
-    <TextareaFeild
-      placeholder={placeholder}
-      value={value}
-      onChange={onChange}
-    />
+    <>
+      <TextareaFeild
+        type={type}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        isError={error}
+      />
+      {error && <ErrorText>{error}</ErrorText>}
+    </>
   );
 };
+
 export default Textarea;

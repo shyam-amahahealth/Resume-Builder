@@ -19,7 +19,8 @@ import {
   updateName,
   updatePhone,
 } from "../store/action/personalDetailActions";
-const PersonalDetailsForm = () => {
+
+const PersonalDetailsForm = ({ error, setError }) => {
   const dispatch = useDispatch();
   const personalData = useSelector((state) => state.PersonalDetails);
 
@@ -35,11 +36,13 @@ const PersonalDetailsForm = () => {
             value={personalData.name}
             placeholder={"Name"}
             onChange={(event) => dispatch(updateName(event.target.value))}
+            error={error.name}
           />
           <Textarea
             value={personalData.address}
             placeholder={"Address"}
             onChange={(event) => dispatch(updateAddress(event.target.value))}
+            error={error.address}
           />
         </TextInputInnerContainer>
         <TextInputInnerContainer>
@@ -47,16 +50,19 @@ const PersonalDetailsForm = () => {
             value={personalData.email}
             placeholder={"Email"}
             onChange={(event) => dispatch(updateEmail(event.target.value))}
+            error={error.email}
           />
           <TextInput
             value={personalData.phone}
             placeholder={"Phone No"}
             onChange={(event) => dispatch(updatePhone(event.target.value))}
+            error={error.phone}
           />
           <TextInput
             value={personalData.github}
             placeholder={"GitHub"}
             onChange={(event) => dispatch(updateGithub(event.target.value))}
+            error={error.github}
           />
         </TextInputInnerContainer>
       </TextInputContainer>
@@ -70,4 +76,5 @@ const PersonalDetailsForm = () => {
     </FormContainer>
   );
 };
+
 export default PersonalDetailsForm;

@@ -20,6 +20,7 @@ import EducationDetailsForm from "./components/EducationDetailsForm";
 import ExperienceDetailsForm from "./components/ExperienceDetailsForm";
 import PersonalDetailsForm from "./components/PersonalDetailsForm";
 import ProjectDetailsForm from "./components/ProjectDetailsForm";
+import { validateForm } from "./functions/validate";
 
 const rootReducer = combineReducers({
   PersonalDetails: PersonalDetailReducer,
@@ -34,21 +35,24 @@ const persistConfig = {
   key: "root",
   storage,
 };
-
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const App = () => {
   const store = createStore(persistedReducer);
   const persistor = persistStore(store);
-
+  const [error, setError] = useState({});
   const [modalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
+    const errors = validateForm(store);
+    setError(errors);
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
-    setModalOpen(true);
+    if (Object.keys(errors).length === 0) {
+      setModalOpen(true);
+    }
   };
 
   const closeModal = () => {
@@ -60,7 +64,7 @@ const App = () => {
       <PersistGate loading={null} persistor={persistor}>
         <MainContainer>
           <Navbar title="Online Resume Builder" />
-          <PersonalDetailsForm />
+          <PersonalDetailsForm error={error} setError={setError} />
           <EducationDetailsForm />
           <SkillsDetailsForm />
           <ProjectDetailsForm />
